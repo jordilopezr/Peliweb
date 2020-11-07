@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+<div class="wrap">
+    <br>
+    <h1>Escoge una categoria de producto</h1>
+    <div class="store-wrapper">
+        <div class="category_list">
+            {% for tip in tipo %}
+            <a href="#" class="category_item" category="{{tip.descripcion}}">{{tip.descripcion}}</a> {% endfor %}
+        </div>
+
+        <div class="products-list">
+            {% for prod_video in prod %}
+            <div class="product-item " category="{{prod_video.cod_tipo}}">
+                <img src=" {{prod_video.url}}" alt="">
+                <a href="{{prod_video.href}}">{{prod_video.descripcion}}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}

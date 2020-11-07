@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="m-5">
+    <hr bg-info>
+    <a class="btn btn-info " href="/registrate/ " role="button ">Ingresa a tu cuenta</a>
+</div>
+<!-- ---------------------------Formulario Pedido---------------------------------------------------->
+<section id="pedido" class="container">
+    <div class="row justify-content-center">
+        <div class=" col-md-8">
+            <h2 class="text-primary">Pedido</h2>
+            <form action="/carrito/ " method="POST" name="">{% csrf_token %}
+                <!-- fec_prestamo -->
+                <div class="form-group row ">
+                    <label for="ingreso" class="col-form-label col-md-5 ">fecha de Prestamo:</label>
+                    <div class="col-md-7 ">
+                        <input type="date" name="fec_pres" id="fec_pres" value="" class="form-control " required>
+                        <div class="invalid-feedback ">
+                            Please choose a username.
+                        </div>
+                    </div>
+                </div>
+                <!-- fec_devolucion -->
+                <div class="form-group row ">
+                    <label for="devolucion" class="col-form-label col-md-5 ">fecha de devolucion:</label>
+                    <div class="col-md-7 ">
+                        <input type="date" name="fec_dev" id="fec_dev" value="" class="form-control" required>
+                        <div class="invalid-feedback ">
+                            Please choose a username.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- producto -->
+                <div class=" form-group row ">
+                    <label for="fono" class="col-form-label col-md-5">Pelicula: </label>
+                    <div class="col-md-7 ">
+                        <select class="form-control" id="prod_obj" name="prod_obj">
+                            {% for obj_prd in obj%}
+                                <option class="prod_obj" value="{{obj_prd.id}}">Pelicula: {{obj_prd}}   precio: {{obj_prd.precio}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+
+                <!-- Cliente -->
+                <div class="form-group row ">
+                    <label for="cli" class="col-form-label col-md-5 ">Cliente: </label>
+                    <div class="col-md-7 ">
+                        <select class="form-control" id="cli_obj" name="cli_obj">
+                            {% for obj_cl in obj_cli%}
+                                <option class="cli_obj" value="{{obj_cl}}">{{obj_cl}}</option>
+                            {% endfor %}
+                </select>
+                    </div>
+                </div>
+                <hr bg-info>
+                <div class=" form-group ">
+                    <button class="btn btn-info " type="submit ">Ingresar pedido</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
