@@ -1,3 +1,2 @@
-# Peliweb
- 
-Segunda Entrega, esta rama es la preproduccion
+
+Segunda Entrega, Proyecto PeliWeb
