@@ -38,7 +38,11 @@ class Producto(models.Model):
             return self.nombre
 
 
- 
+class Pedido(models.Model):       
+        fec_prestamo = models.DateField(max_length=20)
+        fec_devolucion = models.DateField(max_length=20)       
+        cod_prod = models.ForeignKey(Producto, on_delete=models.CASCADE)        
+        cod_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)  
 
 
 
