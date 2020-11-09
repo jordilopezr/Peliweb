@@ -5,7 +5,7 @@ from app.models import Tipo, Producto
 class PorcionesTestCase(TestCase):
      def setUp(self):
         tipo1 = Tipo.objects.createt(id=1,descripcion="Accion")
-        Producto.objects.create(id = 3, nombre="Croods",descripcion ="Peli infantil",url=".",href=".",precio=5000,cod_tipo=tipo1)
+        Producto.objects.create(id = 3, nombre="Croods",descripcion ="Pelicula Infantil",url=".",href=".",precio=5000,cod_tipo=tipo1)
 
 
 def test_Producto_tipo(self):
